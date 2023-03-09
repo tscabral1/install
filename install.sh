@@ -7,10 +7,10 @@
 ###############################################
 
 #Install main Openbox files and additional apps
-sudo pacman -S openbox xorg-server xorg-xinit alsa-utils git alacritty obconf lxappearance-obconf menumaker tint2;
+sudo pacman -S openbox xorg-server xorg-xinit alsa-utils git vim alacritty obconf lxappearance-obconf menumaker tint2;
 
 #Configure touchpad tap
-sudo echo 'Section "InputClass"
+echo 'Section "InputClass"
 Identifier "touchpad"
 Driver "libinput"
   MatchIsTouchpad "on"
@@ -24,13 +24,13 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg;
 
 #Autologin
 sudo mkdir /etc/systemd/system/getty@tty1.service.d;
-sudo echo '[Service]
+echo '[Service]
 Type=simple
 ExecStart=
 ExecStart=-/sbin/agetty --autologin thiago --noclear %I 38400 linux' >> /etc/systemd/system/getty@tty1.service.d/override.conf;
 
 #Reconfigure Openbox menu
-mmaker -vf OpenBox3
+mmaker -vf OpenBox3;
 
 #Create .xinitrc
 echo '#!/bin/sh
@@ -81,7 +81,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-exec openbox-session' > ~/.xinitrc
+exec openbox-session' > ~/.xinitrc;
 
 
 #Startx automatically
