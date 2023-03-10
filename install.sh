@@ -79,7 +79,7 @@ echo '#
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
 . startx
 logout
-fi' > ~/.bash_profile
+fi' > ~/.bash_profile;
 
 #Run postinstall.sh
 sudo bash postintall.sh
