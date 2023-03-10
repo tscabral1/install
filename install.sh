@@ -9,25 +9,9 @@
 #Install main Openbox files and additional apps
 sudo pacman -S openbox xorg-server xorg-xinit alsa-utils git vim alacritty obconf lxappearance-obconf menumaker tint2;
 
-#Configure touchpad tap
-echo 'Section "InputClass"
-Identifier "touchpad"
-Driver "libinput"
-  MatchIsTouchpad "on"
-  Option "Tapping" "on"
-  Option "ClickMethod" "buttonareas"
-EndSection' >> /etc/X11/xorg.conf.d/30-touchpad.conf;
-
 #Change Grub timeout to 0
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub;
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
-
-#Autologin
-sudo mkdir /etc/systemd/system/getty@tty1.service.d;
-echo '[Service]
-Type=simple
-ExecStart=
-ExecStart=-/sbin/agetty --autologin thiago --noclear %I 38400 linux' >> /etc/systemd/system/getty@tty1.service.d/override.conf;
 
 #Reconfigure Openbox menu
 mmaker -vf OpenBox3;
@@ -96,3 +80,6 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
 . startx
 logout
 fi' > ~/.bash_profile
+
+#Run postinstall.sh
+sudo bash postintall.sh
