@@ -82,4 +82,5 @@ logout
 fi' > ~/.bash_profile;
 
 #Run postinstall.sh
+wget https://raw.githubusercontent.com/tscabral1/install/main/postinstall.sh;
 sudo bash postinstall.sh
