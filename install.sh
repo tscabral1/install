@@ -82,4 +82,4 @@ logout
 fi' > ~/.bash_profile;
 
 #Run postinstall.sh
-sudo bash postintall.sh
+sudo bash postinstall.sh
