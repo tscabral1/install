@@ -7,7 +7,7 @@
 ###############################################
 
 #Install main Openbox files and additional apps
-sudo pacman -S openbox xorg-server xorg-xinit alsa-utils git vim alacritty obconf lxappearance-obconf menumaker tint2;
+sudo pacman -S openbox xorg-server xorg-xinit alsa-utils pulseaudio-bluetooth git vim alacritty obconf lxappearance-obconf menumaker tint2;
 
 #Change Grub timeout to 0
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub;
