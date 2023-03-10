@@ -16,7 +16,7 @@ Driver "libinput"
 EndSection' > /etc/X11/xorg.conf.d/30-touchpad.conf;
 
 #Autologin
-sudo mkdir /etc/systemd/system/getty@tty1.service.d;
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d;
 sudo echo '[Service]
 Type=simple
 ExecStart=
