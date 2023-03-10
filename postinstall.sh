@@ -13,11 +13,11 @@ Driver "libinput"
   MatchIsTouchpad "on"
   Option "Tapping" "on"
   Option "ClickMethod" "buttonareas"
-EndSection' >> /etc/X11/xorg.conf.d/30-touchpad.conf;
+EndSection' > /etc/X11/xorg.conf.d/30-touchpad.conf;
 
 #Autologin
 sudo mkdir /etc/systemd/system/getty@tty1.service.d;
 sudo echo '[Service]
 Type=simple
 ExecStart=
-ExecStart=-/sbin/agetty --autologin thiago --noclear %I 38400 linux' >> /etc/systemd/system/getty@tty1.service.d/override.conf
+ExecStart=-/sbin/agetty --autologin thiago --noclear %I 38400 linux' > /etc/systemd/system/getty@tty1.service.d/override.conf
