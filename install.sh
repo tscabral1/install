@@ -16,6 +16,8 @@ sudo pacman -S openbox xorg-server xorg-xinit alsa-utils pulseaudio-bluetooth bl
 git clone https://aur.archlinux.org/yay.git;
 cd yay;
 makepkg -si;
+cd $HOME/;
+sudo rm -r yay;
 
 #Change Grub timeout to 0
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub;
