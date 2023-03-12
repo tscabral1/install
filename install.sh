@@ -6,12 +6,19 @@
 #or Arch Linux based distros.                 #
 ###############################################
 
+#Update system
+sudo pacman -Syy;
+
 #Install main Openbox files and additional apps
-sudo pacman -S openbox xorg-server xorg-xinit alsa-utils pulseaudio-bluetooth git vim alacritty obconf lxappearance-obconf menumaker tint2;
+sudo pacman -S openbox xorg-server xorg-xinit alsa-utils pulseaudio-bluetooth bluez bluez-utils blueman git vim alacritty obconf lxappearance-obconf menumaker tint2;
 
 #Change Grub timeout to 0
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub;
 sudo grub-mkconfig -o /boot/grub/grub.cfg;
+
+#Configure bluetooth
+sudo sed -i 's/#AutoEnable=true/AutoEnable=true/g' /etc/bluetooth/main.conf;
+sudo systemctl enable bluetooth.service;
 
 #Reconfigure Openbox menu
 mmaker -vf OpenBox3;
