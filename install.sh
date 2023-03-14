@@ -10,7 +10,7 @@
 sudo pacman -Syy;
 
 #Install main Openbox files and additional apps
-sudo pacman -S openbox xorg-server xorg-xinit alsa-utils pulseaudio-bluetooth bluez bluez-utils blueman git vim alacritty obconf lxappearance-obconf menumaker tint2;
+sudo pacman -S openbox xorg-server xorg-xinit alsa-utils pulseaudio-bluetooth bluez bluez-utils blueman git vim alacritty obconf lxappearance-obconf menumaker tint2 firefox pcmanfm;
 
 #Install yay
 cd $HOME;
